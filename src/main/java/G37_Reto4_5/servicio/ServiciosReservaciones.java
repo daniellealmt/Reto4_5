@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package G37_Reto4_5.servicio;
-
+/*Importacion de paquetes*/
 import G37_Reto4_5.modelo.ContadorClientes;
 import G37_Reto4_5.modelo.Reservaciones;
 import G37_Reto4_5.modelo.StatusReservas;
@@ -21,19 +21,23 @@ import org.springframework.stereotype.Service;
  *
  * @author DLEAL
  */
+/*implementacion del metodo entidad*/
 @Service
+/*Cracion de la Clase Servicios Reservacionesd*/
 public class ServiciosReservaciones {
+    /*implementar autoincrementar los registros*/
     @Autowired
+    /*creacion de los metodos de la clase*/
     private RepositorioReservaciones metodosCrud;
-
+/*creacion de llamar la clase Reservaciones*/
     public List<Reservaciones> getAll(){
         return metodosCrud.getAll();
     }
-
+/*creacion metodo llamar la clase Reservaciones*/
     public Optional<Reservaciones> getReservation(int reservationId) {
         return metodosCrud.getReservation(reservationId);
     }
-
+/*creacion metodo guardar en la clase Reservation*/
     public Reservaciones save(Reservaciones reservation){
         if(reservation.getIdReservation()==null){
             return metodosCrud.save(reservation);
@@ -46,7 +50,7 @@ public class ServiciosReservaciones {
             }
         }
     }
-
+/*creacion metodo actualizar en la clase Reservation*/
     public Reservaciones update(Reservaciones reservation){
         if(reservation.getIdReservation()!=null){
             Optional<Reservaciones> e= metodosCrud.getReservation(reservation.getIdReservation());
@@ -70,7 +74,7 @@ public class ServiciosReservaciones {
             return reservation;
         }
     }
-
+/*creacion metodo eliminar en la clase Reservation*/
     public boolean deleteReservation(int reservationId) {
         Boolean aBoolean = getReservation(reservationId).map(reservation -> {
             metodosCrud.delete(reservation);
@@ -78,14 +82,14 @@ public class ServiciosReservaciones {
         }).orElse(false);
         return aBoolean;
     }
-    
+ /*creacion metodo llamar de forma condicionada la clase Reservation*/   
     public StatusReservas reporteStatusServicio (){
         List<Reservaciones>completed= metodosCrud.ReservacionStatusRepositorio("completed");
         List<Reservaciones>cancelled= metodosCrud.ReservacionStatusRepositorio("cancelled");
         
         return new StatusReservas(completed.size(), cancelled.size() );
     }
-    
+/*creacion metodo llamar de forma condicionada la clase Reservation*/    
     public List<Reservaciones> reporteTiempoServicio (String datoA, String datoB){
         SimpleDateFormat parser = new SimpleDateFormat ("yyyy-MM-dd");
         

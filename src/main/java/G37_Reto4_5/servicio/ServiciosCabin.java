@@ -57,11 +57,11 @@ public class ServiciosCabin {
                 if(cabin.getDescription()!=null){
                     e.get().setDescription(cabin.getDescription());
                 }
-                /*
+                
                 if(cabin.getCategory()!=null){
                     e.get().setCategory(cabin.getCategory());
                 }
-                */
+                
                 metodosCrud.save(e.get());
                 return e.get();
             }else{
