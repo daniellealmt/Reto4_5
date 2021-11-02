@@ -1,7 +1,7 @@
 function autoInicioCategoria(){
     console.log("se esta ejecutando")
     $.ajax({
-        url:"http://localhost:8080/api/Category/all",
+        url:"http://150.230.71.237:8080/api/Category/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -18,7 +18,7 @@ function autoInicioCategoria(){
 
 function traerInformacion(){
     $.ajax({
-        url:"http://localhost:8080/api/Cabin/all",
+        url:"http://150.230.71.237:8080/api/Cabin/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -77,7 +77,7 @@ function guardarInformacion(){
         dataType: 'JSON',
         data: JSON.stringify(var2),
         
-        url:"http://localhost:8080/api/Cabin/save",
+        url:"http://150.230.71.237:8080/api/Cabin/save",
        
         
         success:function(response) {
@@ -101,8 +101,7 @@ function guardarInformacion(){
 function editarInformacion(id){
     $.ajax({
         dataType: 'json',
-        url:"http://localhost:8080/api/Cabin/"+id,
-        //url: "http://localhost:8080/api/Skate/" + id,
+        url:"http://150.230.71.237:8080/api/Cabin/"+id,
         type: 'GET',
 
         success: function (response) {
@@ -136,7 +135,7 @@ function actualizar(idElemento){
     console.log(myData);
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Cabin/update",
+        url:"http://150.230.71.237:8080/api/Cabin/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/JSON",
@@ -163,7 +162,7 @@ function borrarElemento(idElemento){
     };
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Cabin/"+idElemento,
+        url:"http://150.230.71.237:8080/api/Cabin/"+idElemento,
         type:"DELETE",
         data:dataToSend,
         contentType:"application/JSON",

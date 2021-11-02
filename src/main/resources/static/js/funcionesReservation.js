@@ -1,7 +1,7 @@
 function autoInicioRelacionCliente(){
     
     $.ajax({
-        url:"http://localhost:8080/api/Client/all",
+        url:"http://150.230.71.237:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -19,7 +19,7 @@ function autoInicioRelacionCliente(){
 function autoInicioCabin(){
 
     $.ajax({
-        url:"http://localhost:8080/api/Cabin/all",
+        url:"http://150.230.71.237:8080/api/Cabin/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -36,7 +36,7 @@ function autoInicioCabin(){
 
 function traerInformacion(){
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/all",
+        url:"http://150.230.71.237:8080/api/Reservation/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -91,7 +91,7 @@ function guardarInformacion(){
         dataType: 'JSON',
         data: JSON.stringify(var1),
         
-        url:"http://localhost:8080/api/Reservation/save",
+        url:"http://150.230.71.237:8080/api/Reservation/save",
        
         
         success:function(response) {
@@ -116,8 +116,7 @@ function guardarInformacion(){
 function editarInformacion(id){
     $.ajax({
         dataType: 'json',
-        url:"http://localhost:8080/api/Reservation/"+id,
-        //url: "http://localhost:8080/api/Skate/" + id,
+        url:"http://150.230.71.237:8080/api/Reservation/"+id,
         type: 'GET',
 
         success: function (response) {
@@ -151,7 +150,7 @@ function actualizar(idElemento){
     console.log(myData);
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/update",
+        url:"http://150.230.71.237:8080/api/Reservation/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/JSON",
@@ -179,7 +178,7 @@ function borrarElemento(idElemento){
     };
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/"+idElemento,
+        url:"http://150.230.71.237:8080/api/Reservation/"+idElemento,
         type:"DELETE",
         data:dataToSend,
         contentType:"application/JSON",

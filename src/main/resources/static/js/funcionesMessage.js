@@ -1,7 +1,7 @@
 function autoInicioRelacionCliente(){
     
     $.ajax({
-        url:"http://localhost:8080/api/Client/all",
+        url:"http://150.230.71.237:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -18,7 +18,7 @@ function autoInicioRelacionCliente(){
 function autoInicioCabin(){
 
     $.ajax({
-        url:"http://localhost:8080/api/Cabin/all",
+        url:"http://150.230.71.237:8080/api/Cabin/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -34,7 +34,7 @@ function autoInicioCabin(){
 }
 function traerInformacion(){
     $.ajax({
-        url:"http://localhost:8080/api/Message/all",
+        url:"http://150.230.71.237:8080/api/Message/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -89,7 +89,7 @@ function guardarInformacion(){
         dataType: 'JSON',
         data: JSON.stringify(var2),
         
-        url:"http://localhost:8080/api/Message/save",
+        url:"http://150.230.71.237:8080/api/Message/save",
        
         
         success:function(response) {
@@ -113,8 +113,7 @@ function guardarInformacion(){
 function editarInformacion(id){
     $.ajax({
         dataType: 'json',
-        url:"http://localhost:8080/api/Message/"+id,
-        //url: "http://localhost:8080/api/Skate/" + id,
+        url:"http://150.230.71.237:8080/api/Message/"+id,
         type: 'GET',
 
         success: function (response) {
@@ -144,7 +143,7 @@ function actualizar(idElemento){
     console.log(myData);
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Message/update",
+        url:"http://150.230.71.237:8080/api/Message/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/JSON",
@@ -153,8 +152,6 @@ function actualizar(idElemento){
             $("#resultado").empty();
             $("#idMessage").val("");
             $("#messageText").val("");
-            //$("#select-cabin").val("");
-            //$("#select-client").val("");
             traerInformacion();
             console.log(respuesta);
             alert("se ha Actualizado correctamente el mensaje")
@@ -169,7 +166,7 @@ function borrarElemento(idElemento){
     };
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Message/"+idElemento,
+        url:"http://150.230.71.237:8080/api/Message/"+idElemento,
         type:"DELETE",
         data:dataToSend,
         contentType:"application/JSON",
