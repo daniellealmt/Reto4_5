@@ -55,8 +55,9 @@ function pintarRespuesta(respuesta){
     myTable+="<td>CLIENTE</td>";
     myTable+="<td>CABAÑA</td>";
     myTable+="<td>ESTATUS</td>";
-    myTable+="<td>BORRAR</td>";
+    myTable+="<td>EDITAR</td>";
     myTable+="<td>ACTUALIZAR</td>";
+    myTable+="<td>BORRAR</td>";
     "</tr>";
 
     for(i=0;i<respuesta.length;i++){
