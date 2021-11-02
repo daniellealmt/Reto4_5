@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G37-Grupo5_client</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/funcionesClient.js"></script>
+    <link rel="stylesheet" href="misestilos.css">
+</head>
+<body bgcolor="#ffffb3">
+    <header id="cabeceralogo">
+    <div>
+    <h1>Clientes </h1>
+    </div>
+    </header>
+    <nav id="menuprincipal">
+    <div>
+    <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="category.html">Categorias</a></li>
+    <li><a href="cabin.html">Cabañas</a></li>
+    <li><a href="client.html">Clientes</a></li>
+    <li><a href="Reservation.html">Reservaciones</a></li>
+    <li><a href="Message.html">Mensajes</a></li>    
+    <li><a href="reportestatus.html">Reportes</a></li>
+    
+    
+    <br><br>
+    <button onclick="traerInformacion()">Consultar</button>
+    <br><br>
+    <div id="resultado">  </div>  
+    <br>
+    <div>        
+        <input type="text" id="email" placeholder="email">
+        <input type="password"  name="contraseña" id="password" placeholder="password">
+        <input type="text" id="name" placeholder="name">        
+        <input type="number" id="age" placeholder="age">
+    </div>
+    <br>
+    <button onclick="guardarInformacion()">Guardar!</button>
+<button onclick="editarInformacion()">Actualizar!</button>
+    
+    </ul>
+    </div>
+    <div class="demoIMG"> 
+    <img class="novisible" src="imagenes/clientes2.jpg" />
+    <img class="visible" src="imagenes/clientes1.png" />
+    </div><br>  
+    </nav>
+    
+</body>
+</html>

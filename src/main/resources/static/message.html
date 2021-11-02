@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G37-Grupo5_client</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/funcionesMessage.js"></script>
+    <link rel="stylesheet" href="misestilos.css">
+</head>
+<body bgcolor= #cce0ff>
+    <header id="cabeceralogo">
+    <div>
+    <h1>Mensajes </h1>
+    </div>
+    </header>
+    <nav id="menuprincipal">
+    <div>
+    <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="category.html">Categorias</a></li>
+    <li><a href="cabin.html">Cabañas</a></li>
+    <li><a href="client.html">Clientes</a></li>
+    <li><a href="Reservation.html">Reservaciones</a></li>
+    <li><a href="Message.html">Mensajes</a></li>    
+    <li><a href="reportestatus.html">Reportes</a></li>
+    <br><br>
+
+    <button onclick="traerInformacion()">Consultar</button>
+    <br><br>
+    <div id="resultado">  </div>  
+    <script type="text/javascript"> 
+    window.onload = traerInformacion();
+    </script>
+    <br>
+    <div> 
+    <tr>CLIENTE</tr>
+    <select id="select-client"></select>
+    <script type="text/javascript">
+        window.onload = autoInicioRelacionCliente();
+    </script>
+    <tr>CABAÑA</tr>
+    <select id="select-cabin"></select>
+    <script type="text/javascript">
+            window.onload = autoInicioCabin();
+    </script>
+    <br>
+    <textarea id="messageText" placeholder="Mensaje" rows="10" cols="68"  onkeydown="upperCaseF(this)"></textarea>       
+    <br>
+    
+    
+    </div>
+    <br>
+    <button onclick="guardarInformacion()">Guardar!</button>
+    <br><br>
+    </ul>
+    </div>
+    <div class="demoIMG"> 
+    <img class="novisible" src="imagenes/mensajes.jfif" />
+    <img class="visible" src="imagenes/mensaje2.png" />
+      
+    </div>
+    </nav>
+    
+    
+</body>
+</html>
